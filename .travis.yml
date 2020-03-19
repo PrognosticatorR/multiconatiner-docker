@@ -17,7 +17,7 @@ after_success:
     # LOGIN TO DOCKER
     - echo "$DOCKER_PASSWORD" | docker login  -u "$DOCKER_ID" --password-stdin
     # Take images and push them to Docker HUB
-    - docker push rawatdevesh/multi-client
     - docker push rawatdevesh/multi-nginx
     - docker push rawatdevesh/multi-server
     - docker push rawatdevesh/multi-worker
+    - docker push rawatdevesh/multi-client
