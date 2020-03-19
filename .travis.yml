@@ -4,7 +4,7 @@ services:
     - docker
 
 before_install:
-    - docker build -t rawatdevesh/react-test -f ./client/Dockefile.dev ./client
+    - docker build -t rawatdevesh/react-testclient -f ./client/Dockerfile.dev ./client
 
 script:
     - docker run -e CI=true rawatdevesh/react-test yarn test
