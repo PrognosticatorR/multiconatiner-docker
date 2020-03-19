@@ -1,11 +1,9 @@
-FROM node:alpine
+FROM node:alpine as builder
 WORKDIR '/app'
-RUN apk add yarn
 COPY ./package.json ./
-RUN yarn install
+RUN npm install
 COPY . .
-RUN yarn build
-
+RUN npm run build
 
 FROM nginx
 EXPOSE 3000
